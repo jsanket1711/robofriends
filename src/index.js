@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {Provide,connect } from 'react-redux';
-import {createStore} from 'redux';
+import {Provider,connect } from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
 //import CardList from './CardList';
 import * as serviceWorker from './serviceWorker';
 //import {robots} from './robots';
 import 'tachyons';
 import App from './containers/App';
 import {searchRobots} from './reducers'; 
+import { createLogger } from 'redux-logger';
 
-
-const store = createStore(searchRobots); 
+const logger = createLogger();
+const store = createStore(searchRobots, applyMiddleware(logger)); 
 
 ReactDOM.render(
                 <provider store={store}>

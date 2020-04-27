@@ -1,2 +1,1 @@
-export const CHANGE_SEARCHFIELD = 'CHANGE_SEARCHFIELD';
-export default Constants;
+export const CHANGE_SEARCH_FIELD = 'CHANGE_SEARCH_FIELD';

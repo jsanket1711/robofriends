@@ -5,8 +5,7 @@ import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import './App.css';
 import ErrorBoundry from '../components/ErrorBoundry';
-
-import {setSearchField} from './/actions';            
+import {setSearchField} from '../actions';            
 import { connect } from 'react-redux';
 
 const mapStateToProps = state =>{
@@ -40,7 +39,7 @@ class App extends Component {
         const {robots,searchfield} = this.state;
         const {searchField,onSearchChange}= this.props;
         const filteredRobots = robots.filter(robot => {
-            return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+            return robot.name.toLowerCase().includes(searchField.toLowerCase());
         })
         
         return !robots.length ?
