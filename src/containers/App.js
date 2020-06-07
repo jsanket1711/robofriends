@@ -9,6 +9,7 @@ import {setSearchField, requestRobots} from '../actions';
 import { connect } from 'react-redux';
 import'./App.css';
 
+
 const mapStateToProps = state =>{
     return{ 
         searchField : state.searchRobots.searchField,
@@ -41,12 +42,14 @@ class App extends Component {
             <div className='tc'>
                 <h1 className = 'f1'> 'RoboFriends' </h1>
                 <SearchBox searchChange={onSearchChange}/>
-                <Scroll> 
+                 <Scroll> 
                  <ErrorBoundry>
+ 
 
                     <CardList robots ={filteredRobots}/>
                  </ErrorBoundry>
                 </Scroll>
+                
             </div>
 
         );
